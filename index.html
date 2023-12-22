@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Kitap Kütüphanesi</title>
+</head>
+<body>
+    <div id="app">
+        <!-- Buraya kitap listesi ve diğer bileşenleri ekleyin -->
+        <div id="kitap-container"></div>
+        <input type="text" id="arama-input" placeholder="Kitap Ara...">
+        <label>
+            <input type="radio" name="aramaSecenekleri" value="ad" checked> Kitap Adı
+        </label>
+        <label>
+            <input type="radio" name="aramaSecenekleri" value="yazar"> Yazar
+        </label>
+        <label>
+            <input type="radio" name="aramaSecenekleri" value="yayinevi"> Yayınevi
+        </label>
+        <label>
+            <input type="radio" name="aramaSecenekleri" value="yil"> Basım Yılı
+        </label>
+        <select id="sıralama-select">
+            <option value="a-z">A-Z</option>
+            <option value="z-a">Z-A</option>
+        </select>
+        <select id="sayfa-secimi-select">
+            <option value="10" selected>10 Kitap</option>
+            <option value="25">25 Kitap</option>
+            <option value="50">50 Kitap</option>
+            <option value="100">100 Kitap</option>
+            <option value="250">250 Kitap</option>
+            <option value="500">500 Kitap</option>
+            <option value="1000">1000 Kitap</option>
+        </select>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
