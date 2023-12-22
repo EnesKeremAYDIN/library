@@ -1,0 +1,44 @@
+body {
+    background-color: #222;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+#app {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.kitap {
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#arama-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+#sıralama-select,
+#sayfa-secimi-select {
+    margin-top: 10px;
+}
+
+#kitap-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
