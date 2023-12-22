@@ -1,9 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const kitapListesi = [/* JSON'dan alınan kitap listesi buraya gelecek */];
+    const kitapListesi = [
+        {
+            "resim": "kitap1.jpg",
+            "ad": "Harry Potter ve Felsefe Taşı",
+            "yazar": "J.K. Rowling",
+            "yayinevi": "YKY",
+            "yil": 1997
+        },
+        {
+            "resim": "kitap2.jpg",
+            "ad": "1984",
+            "yazar": "George Orwell",
+            "yayinevi": "Can Yayınları",
+            "yil": 1949
+        },
+        {
+            "resim": "kitap3.jpg",
+            "ad": "Beyaz Diş",
+            "yazar": "Jack London",
+            "yayinevi": "İş Bankası Kültür Yayınları",
+            "yil": 1906
+        },
+        // Ek kitaplar buraya eklenebilir
+    ];
+
     let currentPage = 1;
     let booksPerPage = 10;
-    let currentSortOption = "a-z"; // Default sıralama seçeneği
-    let currentSearchOption = "ad"; // Default arama seçeneği
+    let currentSortOption = "a-z";
+    let currentSearchOption = "ad";
     let currentSearchQuery = "";
 
     const kitapContainer = document.getElementById("kitap-container");
@@ -20,7 +44,33 @@ document.addEventListener('DOMContentLoaded', function () {
         kitapContainer.innerHTML = ""; // Kitapları temizle
 
         displayedBooks.forEach((kitap) => {
-            // Kitapları HTML sayfasına ekleme işlemleri burada yapılacak
+            const kitapDiv = document.createElement("div");
+            kitapDiv.classList.add("kitap");
+
+            // Kitap bilgilerini ekleme işlemleri burada yapılacak
+            const kitapResim = document.createElement("img");
+            kitapResim.src = kitap.resim;
+            kitapResim.alt = kitap.ad;
+            kitapDiv.appendChild(kitapResim);
+
+            const kitapAd = document.createElement("p");
+            kitapAd.textContent = "Kitap Adı: " + kitap.ad;
+            kitapDiv.appendChild(kitapAd);
+
+            const kitapYazar = document.createElement("p");
+            kitapYazar.textContent = "Yazar: " + kitap.yazar;
+            kitapDiv.appendChild(kitapYazar);
+
+            const kitapYayinevi = document.createElement("p");
+            kitapYayinevi.textContent = "Yayınevi: " + kitap.yayinevi;
+            kitapDiv.appendChild(kitapYayinevi);
+
+            const kitapYil = document.createElement("p");
+            kitapYil.textContent = "Yıl: " + kitap.yil;
+            kitapDiv.appendChild(kitapYil);
+
+            // Kitap div'ini sayfaya ekleme işlemi
+            kitapContainer.appendChild(kitapDiv);
         });
 
         // Sayfa numaralarını güncelleme işlemleri burada yapılacak
